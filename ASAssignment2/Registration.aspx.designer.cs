@@ -105,6 +105,15 @@ namespace ASAssignment2
         protected global::System.Web.UI.WebControls.TextBox tb_cvv;
 
         /// <summary>
+        /// err_checker control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label err_checker;
+
+        /// <summary>
         /// btn_Register control.
         /// </summary>
         /// <remarks>

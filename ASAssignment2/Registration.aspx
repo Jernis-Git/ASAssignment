@@ -8,7 +8,6 @@
     <script type="text/javascript">
         function validate() {
             var str = document.getElementById('<%=tb_password.ClientID %>').value;
-            
             if (str.length < 8) {
                 document.getElementById("pwd_checker").innerHTML = "Password Length must contain at least 8 characters.";
                 document.getElementById("pwd_checker").style.color = "Red";
@@ -64,13 +63,12 @@
         <div>
             <p id="welcome"> WELCOME!</p>
             <p>Let's sign you up for your account with us.</p>
-            <p>&nbsp;</p>
 
         </div>
         <div>
             <p>First Name:<asp:TextBox ID="tb_fname" runat="server" Width="200px" style="margin-left: 67px"></asp:TextBox>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Last Name: <asp:TextBox ID="tb_lname" runat="server" Width="200px"></asp:TextBox>
-            </p>
+            &nbsp;</p>
 <p>
     Date Of Birth (DD-MM-YY): <asp:TextBox ID="tb_dob" runat="server" Width="200px"></asp:TextBox>
 </p>
@@ -98,7 +96,8 @@
     <asp:TextBox ID="tb_cvv" runat="server" Width="38px" CssClass="auto-style6" ></asp:TextBox>
 </p>
             <p>
-                 &nbsp;</p>
+                 <asp:Label ID="err_checker" runat="server" Text="*"></asp:Label>
+            </p>
             <p>
                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</p>
         </div>

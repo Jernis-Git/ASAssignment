@@ -82,6 +82,13 @@ namespace ASAssignment2
             string pwd = tb_pwd.Text.ToString().Trim();
             string userid = tb_userid.Text.ToString().Trim();
 
+            if (String.IsNullOrEmpty(userid) && String.IsNullOrEmpty(pwd))
+            {
+                lblMessage.Visible = true;
+                lblMessage.Text = "Your email or password is empty. Please fill it up.";
+            }
+            
+
             SHA512Managed hashing = new SHA512Managed();
             string dbHash = getDBHash(userid);
             string dbSalt = getDBSalt(userid);
@@ -97,7 +104,6 @@ namespace ASAssignment2
                     if (userHash.Equals(dbHash))
                     {
                         Session["LoggedIn"] = tb_userid.Text.Trim();
-                        Response.Redirect("Homepage.aspx", false);
 
                         // create a GUID and save into session
                         string guid = Guid.NewGuid().ToString();
@@ -105,7 +111,7 @@ namespace ASAssignment2
 
                         //create a new cookie with this guid value
                         Response.Cookies.Add(new HttpCookie("AuthToken", guid));
-
+                        Response.Redirect("Homepage.aspx");
                     }
                     else
                     {

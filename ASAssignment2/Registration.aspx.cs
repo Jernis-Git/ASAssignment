@@ -68,6 +68,49 @@ namespace ASAssignment2
 
         protected void btn_Register_Click(object sender, EventArgs e)
         {
+
+            if (String.IsNullOrEmpty(tb_fname.Text))
+            {
+                err_checker.Text = "Please fill up your first name.";
+            }
+            else if (String.IsNullOrEmpty(tb_lname.Text))
+            {
+
+                err_checker.Text = "Please fill up your last name.";
+            }
+
+            else if (String.IsNullOrEmpty(tb_dob.Text))
+            {
+
+                err_checker.Text = "Please fill up your date of birth.";
+            }
+
+            else if (String.IsNullOrEmpty(tb_email.Text))
+            {
+
+                err_checker.Text = "Please fill up your email.";
+            }
+            else if (String.IsNullOrEmpty(tb_password.Text))
+            {
+
+                err_checker.Text = "Please fill up your password.";
+            }
+            else if (String.IsNullOrEmpty(tb_ccno.Text))
+            {
+
+                err_checker.Text = "Please fill up your credit card number.";
+            }
+            else if (String.IsNullOrEmpty(tb_ccexpirymth.Text))
+            {
+                
+                err_checker.Text = "Please fill up your credit card expiry.";
+            }
+            else if (String.IsNullOrEmpty(tb_cvv.Text))
+            {
+
+                err_checker.Text = "Please fill up your credit card verification number.";
+            }
+
             int scores = checkPassword(tb_password.Text);
             string status = " ";
             switch (scores)
@@ -124,7 +167,7 @@ namespace ASAssignment2
 
 
             createAccount();
-
+            
 
         }
         public void createAccount()
